@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manta Climate Solutions — HVAC Services</title>
+  <meta name="description" content="Manta Climate Solutions — HVAC installation, maintenance & commissioning." />
+  <style>
+    :root{
+      --accent:#7bd24a;
+      --dark:#0b2a2b;
+      --muted:#6b6b6b;
+      --card:#f7f9f7;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--dark);
+      background: #fff;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      background:linear-gradient(90deg, rgba(11,42,43,0.95), rgba(11,42,43,0.85));
+      color:white;
+      padding:16px 20px;
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:20px;}
+    .nav{
+      display:flex;gap:16px;align-items:center;justify-content:space-between;
+    }
+    .brand{display:flex;align-items:center;gap:12px;}
+    .logo{
+      width:44px;height:44px;border-radius:8px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#063;box-shadow:0 2px 6px rgba(0,0,0,0.12)
+    }
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px;
+      align-items:center;
+      padding:34px 0 40px 0;
+    }
+    .hero-grid{display:flex;flex-direction:column;gap:18px}
+    .kicker{color:var(--accent);font-weight:700}
+    h1{margin:0;font-size:28px;color:white;line-height:1.05}
+    p.lead{color:rgba(255,255,255,0.9);margin:0;max-width:720px}
+    .hero-cta{display:flex;gap:12px;margin-top:8px}
+    .btn{
+      background:var(--accent);border:none;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer;color:#063
+    }
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.12);color:white;padding:9px 12px;border-radius:8px}
+    .hero-img{border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+    .hero-img img{width:100%;height:100%;display:block;object-fit:cover;min-height:220px}
+    /* Stats */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;text-align:center;border:1px solid rgba(11,42,43,0.04)}
+    .card h3{margin:6px 0 0 0;font-size:20px}
+    .card p{margin:6px 0 0 0;color:var(--muted);font-weight:600}
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+    .service{background:white;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(9,9,9,0.04);border:1px solid rgba(11,42,43,0.04)}
+    .service h4{margin:6px 0 0 0}
+    /* Portfolio */
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+    .proj{height:140px;border-radius:10px;overflow:hidden;background:#e9f3ea;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    /* Contact */
+    .contact{
+      display:grid;grid-template-columns:1fr 360px;gap:18px;margin:28px 0;padding:18px;background:#fbfffb;border-radius:12px;border:1px solid rgba(11,42,43,0.03)
+    }
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(11,42,43,0.08);font-size:14px}
+    button[type="submit"]{background:var(--dark);color:white;padding:10px;border-radius:8px;border:none;cursor:pointer}
+    footer{padding:20px 0;color:var(--muted);font-size:14px;text-align:center}
+    /* Responsive */
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 420px}
+      h1{font-size:36px}
+    }
+    @media(max-width:899px){
+      .stats,.services,.portfolio{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .stats,.services,.portfolio{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <div style="font-weight:800">Manta Climate Solutions</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.8)">HVAC | Installation | Maintenance</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">خدمات</a>
+        <a href="#projects">پراجیکٹس</a>
+        <a href="#contact">رابطہ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="kicker">Leading HVAC Innovation</div>
+        <h1>پیشہ ورانہ HVAC انسٹالیشن اور مینٹیننس — ہم آپ کے پراجیکٹس سنبھال سکتے ہیں۔</h1>
+        <p class="lead">9 سال کا تجربہ • 350+ مکمل شدہ پراجیکٹس • 90,000+ یونٹس انسٹال کیے گئے۔ ہمیں موقع دیں، ہم معیار اور وقت پر پورا اتریں گے۔</p>
+        <div class="hero-cta">
+          <button class="btn" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">فری کوٹیشن لیں</button>
+          <button class="btn-outline" onclick="window.location='#projects'">ہمارے کام دیکھیں</button>
+        </div>
+
+        <div class="stats" aria-hidden="false" style="margin-top:12px">
+          <div class="card">
+            <div style="font-size:28px;font-weight:800">9</div>
+            <h3>Years of Experience</h3>
+            <p>تجربہ</p>
+          </div>
+          <div class="card">
+            <div style="font-size:28px;font-weight:800">350+</div>
+            <h3>Projects Completed</h3>
+            <p>مکمل پروجیکٹس</p>
+          </div>
+          <div class="card">
+            <div style="font-size:28px;font-weight:800">90,000+</div>
+            <h3>Units Installed</h3>
+            <p>انسٹال کیے گئے یونٹس</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img" style="min-height:260px">
+        <img alt="HVAC project" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 style="margin-top:4px">ہماری خدمات</h2>
+      <div class="services">
+        <div class="service">
+          <strong>Commercial Installation</strong>
+          <p>VRF/VRV، chilled water systems اور packaged units کی انسٹالیشن۔</p>
+        </div>
+        <div class="service">
+          <strong>Maintenance & AMC</strong>
+          <p>سالانہ معائنہ، preventive maintenance اور سپیئرز سپورٹ۔</p>
+        </div>
+        <div class="service">
+          <strong>Design & Commissioning</strong>
+          <p>Load calculations، duct design، اور commissioning reports۔</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>نمونہ پراجیکٹس</h2>
+      <div class="portfolio">
+        <div class="proj">Hospital HVAC</div>
+        <div class="proj">Office Tower VRF</div>
+        <div class="proj">Retail & Mall Works</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>رابطہ کریں</h2>
+      <div class="contact">
+        <div>
+          <p>ہم آپ کو پروجیکٹ ویو، کوٹیشن اور وقت کا تخمینہ دے سکتے ہیں۔ براہِ کرم نیچے فارم بھریں یا فوری واٹس ایپ کے لیے فون نمبر استعمال کریں:</p>
+          <ul style="margin:6px 0 0 16px;color:var(--muted)">
+            <li><strong>فون:</strong> +92-XXX-XXXXXXX</li>
+            <li><strong>ای میل:</strong> info@manta.com</li>
+            <li><strong>پتا:</strong> Lahore/Islamabad (مثال)</li>
+          </ul>
+        </div>
+
+        <div>
+          <form id="contact-form" onsubmit="event.preventDefault(); alert('شکریہ! ہم آپ سے جلد رابطہ کریں گے۔');" aria-label="Contact form">
+            <input type="text" name="name" placeholder="آپ کا نام" required />
+            <input type="email" name="email" placeholder="ای میل" required />
+            <input type="tel" name="phone" placeholder="فون نمبر" />
+            <textarea name="message" rows="5" placeholder="پراجیکٹ کا مختصر بیان / نوٹس"></textarea>
+            <button type="submit">پیغام بھیجیں</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="yr"></span> Manta Climate Solutions — All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('yr').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
