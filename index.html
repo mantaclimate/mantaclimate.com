@@ -1,171 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manta Climate Solutions (Pvt) Limited</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manta Climate Solutions</title>
   <style>
-<meta name="google-site-verification" content="bNVw10_Ya2MLmkwjfywm7bLEsyFjVII0pbGOaaZP7DU" />
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0b0f0e;
-      color: #d9fdd3;
-      text-align: center;
+    /* ====== Base + theme (dark blue + gold accent) ====== */
+    :root{
+      --bg: #07132a;           /* deep navy background */
+      --card: #0d2340;         /* slightly lighter card bg */
+      --accent: #d4af37;       /* gold accent */
+      --muted: #98a6bf;        /* muted text */
+      --white: #ffffff;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.03);
+      --radius: 12px;
+      --maxw: 1100px;
+      --shadow: 0 8px 30px rgba(2,8,23,0.6);
+      font-family: "Segoe UI", Roboto, "Noto Sans", system-ui, -apple-system, sans-serif;
     }
-    header {
-      background-color: #101a14;
-      padding: 20px;
-      box-shadow: 0 0 25px #00ff88;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg), #021022 80%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    header img {
-      width: 140px;
+
+    /* ====== Header / logo ====== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(2,6,15,0.45), rgba(2,6,15,0.15));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      padding:14px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-    h1 {
-      color: #00ff88;
-      font-size: 28px;
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
     }
-    h2 {
-      color: #39b4ff;
+    .logo-wrap img{
+      height:56px;
+      width:auto;
+      border-radius:10px;
+      object-fit:contain;
+      box-shadow: var(--shadow);
+      background:var(--glass);
+      padding:6px;
     }
-    .section {
-      margin: 40px auto;
-      max-width: 900px;
-      padding: 20px;
-      border-radius: 10px;
-      background: rgba(0, 255, 136, 0.05);
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    .brand{
+      text-align:center;
+      line-height:1;
     }
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-top: 30px;
+    .brand h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:0.4px;
     }
-    .stat {
-      width: 200px;
-      background: rgba(57, 180, 255, 0.1);
-      border: 1px solid rgba(0,255,136,0.3);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 10px;
-      box-shadow: 0 0 10px #00ff88;
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    /* ====== Hero ====== */
+    .hero{
+      max-width:var(--maxw);
+      margin:36px auto;
+      padding:36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      display:flex;
+      gap:28px;
+      align-items:center;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
+    .hero .left{
+      flex:1;
     }
-    input, textarea {
-      width: 80%;
-      max-width: 500px;
-      margin: 10px;
-      padding: 12px;
-      border: 1px solid #00ff88;
-      border-radius: 5px;
-      background-color: #101a14;
-      color: #d9fdd3;
-      font-size: 15px;
+    .hero h2{
+      margin:0 0 10px 0;
+      font-size:28px;
     }
-    button {
-      background-color: #00ff88;
-      color: #0b0f0e;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
+    .hero p{margin:0 0 18px 0;color:var(--muted);font-size:15px}
+    .cta-group{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      background:var(--accent);
+      color:#071018;
+      border:none;
+      padding:12px 18px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      text-decoration:none;
+      box-shadow: 0 6px 20px rgba(212,175,55,0.12);
     }
-    button:hover {
-      background-color: #39b4ff;
-      color: white;
-      box-shadow: 0 0 15px #39b4ff;
+    .btn.secondary{
+      background:transparent;
+      color:var(--white);
+      border:1px solid rgba(255,255,255,0.06);
     }
-    footer {
-      background-color: #101a14;
-      padding: 30px;
-      margin-top: 50px;
-      color: #b9fbc0;
-      font-size: 15px;
-      box-shadow: 0 -2px 25px #00ff88;
+
+    /* ====== Gallery / work ====== */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:18px;
     }
-    a {
-      color: #39b4ff;
-      text-decoration: none;
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      overflow:hidden;
+      transition: transform .28s ease, box-shadow .28s ease;
+      border:1px solid rgba(255,255,255,0.02);
     }
-    a:hover {
-      text-decoration: underline;
+    .card:hover{ transform: translateY(-8px); box-shadow: 0 18px 50px rgba(2,8,23,0.7); }
+    .card img{ width:100%; height:180px; object-fit:cover; border-radius:8px; display:block; }
+    .card h3{ margin:12px 0 6px 0; font-size:16px }
+    .card p{ margin:0; color:var(--muted); font-size:14px }
+
+    /* ====== Sections ====== */
+    section{ max-width:var(--maxw); margin:28px auto; padding:22px; border-radius:12px; }
+    .section-title{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .section-title h2{ margin:0; font-size:20px; }
+    .muted{ color:var(--muted) }
+
+    /* ====== Contact form ====== */
+    .contact{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;
+      border-radius:12px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:18px;
     }
+    .contact form{ display:flex; flex-direction:column; gap:10px; }
+    .contact input, .contact textarea{
+      background:var(--glass-2);
+      border:1px solid rgba(255,255,255,0.03);
+      padding:12px;
+      border-radius:8px;
+      color:var(--white);
+      outline:none;
+    }
+    .contact textarea{ min-height:140px; resize:vertical; }
+
+    /* ====== Footer ====== */
+    footer{ text-align:center; padding:22px; color:var(--muted); font-size:14px }
+
+    /* ====== Responsive ====== */
+    @media (max-width:880px){
+      .hero{ flex-direction:column; padding:20px }
+      .contact{ grid-template-columns: 1fr; }
+      .logo-wrap img{ height:48px }
+    }
+
+    /* smooth scroll behavior */
+    html{ scroll-behavior: smooth; }
   </style>
 </head>
 <body>
 
+  <!-- ===== HEADER / LOGO (Top center) ===== -->
   <header>
-    <img src="manta-logo.png" alt="Manta Climate Solutions Logo">
-    <h1>Manta Climate Solutions (Pvt) Limited</h1>
-    <p>HVAC | Design | Installation | Maintenance</p>
-  </header>
-
-  <section class="section">
-    <h2>About Us</h2>
-    <p>
-      Manta Climate Solutions (Pvt) Limited is a professional HVAC company based in Lahore, Punjab, Pakistan. 
-      With 5 years of experience and 20+ completed projects, we specialize in providing high-quality heating, ventilation, and air conditioning solutions with reliability, innovation, and performance.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Our Achievements</h2>
-    <div class="stats">
-      <div class="stat">
-        <h3>20+</h3>
-        <p>Projects Completed</p>
-      </div>
-      <div class="stat">
-        <h3>5 Years</h3>
-        <p>Experience in HVAC</p>
-      </div>
-      <div class="stat">
-        <h3>Lahore, Pakistan</h3>
-        <p>Serving Nationwide</p>
+    <div class="logo-wrap">
+      <!-- ====== Replace the LOGO_URL below with your logo image address ====== -->
+      <!-- Example: https://yourdomain.com/assets/logo.png -->
+      <img id="site-logo" src="LOGO_URL_HERE" alt="Manta Climate Solutions Logo" onerror="this.style.display='none'">
+      <div class="brand">
+        <h1>Manta Climate Solutions</h1>
+        <p class="muted">Precision HVAC • VRF Systems • Energy Efficient Solutions</p>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h2>Our Services</h2>
-    <p>
-      ✅ HVAC System Design <br>
-      ✅ Installation & Commissioning <br>
-      ✅ Maintenance & Troubleshooting <br>
-      ✅ Energy Efficiency Optimization <br>
-      ✅ Annual Maintenance Contracts
-    </p>
-  </section>
+  <!-- ===== HERO ===== -->
+  <main>
+    <div class="hero" role="banner">
+      <div class="left">
+        <h2>Professional HVAC & Climate Solutions</h2>
+        <p class="muted">We design, install and maintain high-quality climate control systems that combine performance with energy efficiency.</p>
+        <div class="cta-group">
+          <!-- GET A QUOTATION button - replace REPLACE_EMAIL with your email address below -->
+          <a class="btn" id="quoteBtn" href="#" onclick="openQuotation(event)">Get a quotation</a>
+          <a class="btn secondary" href="#work">Our Work</a>
+        </div>
+      </div>
 
-  <section class="section">
-    <h2>Request a Quote</h2>
-    <p>Fill out the form below and we’ll get back to you shortly.</p>
+      <div style="width:420px; max-width:45%;">
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px; border-radius:12px;">
+          <!-- ====== Replace IMAGE_URL_1 with your hero image address ====== -->
+          <!-- Example: https://yourdomain.com/images/vrf-install.jpg -->
+          <img src="IMAGE_URL_1" alt="Hero image" style="width:100%; height:260px; object-fit:cover; border-radius:8px;" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
 
-    <form action="mailto:mantaclimatesolutions@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message / Project Details" required></textarea>
-      <button type="submit">Send Request</button>
-    </form>
-  </section>
+    <!-- ====== The Great Work We Did ====== -->
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-title">
+        <h2 id="work-title">The Great Work We Did</h2>
+      </div>
 
-  <section class="section">
-    <h2>Contact Us</h2>
-    <p>📍 Lahore, Punjab, Pakistan</p>
-    <p>📧 <a href="mailto:mantaclimatesolutions@gmail.com">mantaclimatesolutions@gmail.com</a></p>
-  </section>
+      <p class="muted">
+        At <strong>Manta Climate Solutions</strong>, we take pride in delivering high-quality HVAC projects with precision and innovation.
+        From large-scale VRF system installations to tailored climate control solutions, our work reflects excellence, reliability,
+        and a deep commitment to energy efficiency. Each project we complete is a mark of trust — built with passion and perfection.
+      </p>
 
-  <footer>
-    © 2025 Manta Climate Solutions (Pvt) Limited — All Rights Reserved
-  </footer>
+      <div class="grid" style="margin-top:18px;">
+        <!-- ====== Card 1 - Replace IMAGE_URL_2 ====== -->
+        <div class="card">
+          <img src="IMAGE_URL_2" alt="Project 1" onerror="this.style.display='none'">
+          <h3>Commercial VRF Installation</h3>
+          <p class="muted">A complete VRF solution for a commercial complex, designed for efficiency and low lifecycle cost.</p>
+        </div>
 
+        <!-- ====== Card 2 - Replace IMAGE_URL_3 ====== -->
+        <div class="card">
+          <img src="IMAGE_URL_3" alt="Project 2" onerror="this.style.display='none'">
+          <h3>Energy Optimization</h3>
+          <p class="muted">Retrofit upgrades that significantly reduced energy usage while improving occupant comfort.</p>
+        </div>
+
+        <!-- ====== Card 3 - Replace IMAGE_URL_4 ====== -->
+        <div class="card">
+          <img src="IMAGE_URL_4" alt="Project 3" onerror="this.style.display='none'">
+          <h3>Maintenance & Support</h3>
+          <p class="muted">Yearly maintenance contracts and fast response service to keep systems running at peak performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Services ====== -->
+    <section id="services">
+      <div class="section-title"><h2>Services</h2></div>
+      <div class="grid">
+        <div class="card">
+          <h3>VRF System Design & Installation</h3>
+          <p class="muted">Custom layouts, high efficiency systems, full installation and commissioning.</p>
+        </div>
+        <div class="card">
+          <h3>Preventive Maintenance</h3>
+          <p class="muted">Annual contracts, inspections, and emergency repairs to extend system life.</p>
+        </div>
+        <div class="card">
+          <h3>Energy Audits</h3>
+          <p class="muted">Identify savings opportunities and implement upgrades that pay back faster.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Contact / Quotation form (optional) ====== -->
+    <section id="contact">
+      <div class="section-title"><h2>Contact Us</h2></div>
+
+      <div class="contact" aria-label="contact section">
+        <form onsubmit="event.preventDefault(); sendMailForm()">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Your email" required>
+          <input type="text" id="subject" placeholder="Subject" value="Quotation Request" required>
+          <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+          <div style="display:flex; gap:10px;">
+            <button class="btn" type="submit">Send via Gmail</button>
+            <a class="btn secondary" href="mailto:REPLACE_EMAIL?subject=Quotation%20Request&body=Hello%2C%0A%0AI%20would%20like%20to%20request%20a%20quotation." >Open default Mail</a>
+          </div>
+        </form>
+
+        <div style="padding:10px;">
+          <h3 style="margin-top:0">Office</h3>
+          <p class="muted">Manta Climate Solutions<br>Phone: +92-XXX-XXXXXXX<br>Email: <span id="officeEmail">REPLACE_EMAIL</span></p>
+          <div style="margin-top:10px;">
+            <!-- small gallery placeholders -->
+            <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px;">
+              <img src="IMAGE_URL_5" alt="" style="width:100%; height:90px; object-fit:cover; border-radius:8px;" onerror="this.style.display='none'">
+              <img src="IMAGE_URL_6" alt="" style="width:100%; height:90px; object-fit:cover; border-radius:8px;" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Manta Climate Solutions — All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // ====== Replace this email with your business email ======
+    const BUSINESS_EMAIL = "REPLACE_EMAIL";
+
+    // populate year and office email
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('officeEmail').textContent = BUSINESS_EMAIL;
+
+    // Open Gmail compose if possible, otherwise fallback to mailto
+    function openQuotation(e){
+      e.preventDefault();
+      // prefill subject and body (URL encoded)
+      const subject = encodeURIComponent("Quotation Request");
+      const body = encodeURIComponent("Hello,\n\nI would like to request a quotation for my HVAC/VRF project. Please let me know next steps and any information you need.\n\nThanks,\n[Your name]");
+      const to = encodeURIComponent(BUSINESS_EMAIL);
+
+      // Gmail web compose URL
+      const gmailUrl = https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body};
+
+      // Try open gmail in new tab, and if popup blocked or user not logged in, fallback to mailto
+      const win = window.open(gmailUrl, '_blank');
+      if(!win){
+        // popup blocked -> open mailto in same tab
+        window.location.href = mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body};
+        return;
+      }
+      // After a short delay, if the new tab didn't change (user logged out), also open mailto as fallback
+      setTimeout(()=>{
+        try {
+          if(win.location && win.location.href && win.location.href.indexOf('mail.google.com') === -1){
+            // not Gmail — fallback
+            window.location.href = mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body};
+          }
+        } catch(err){
+          // cross-origin error or blocked; do nothing — user likely has Gmail.
+        }
+      }, 1200);
+    }
+
+    // send form via opening gmail compose prefilled
+    function sendMailForm(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = encodeURIComponent(document.getElementById('subject').value.trim() || "Quotation Request");
+      const message = encodeURIComponent(document.getElementById('message').value.trim() + "\n\nContact Email: " + email + "\nFrom: " + name);
+      const to = encodeURIComponent(BUSINESS_EMAIL);
+      const gmailUrl = https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${message};
+      const win = window.open(gmailUrl, '_blank');
+      if(!win){
+        window.location.href = mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${message};
+      }
+    }
+  </script>
 </body>
 </html>
